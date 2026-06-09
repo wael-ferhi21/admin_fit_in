@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-[#f5f6fa] text-slate-800 font-sans antialiased m-0;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-200 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-300; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl p-5;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .card-hover {
+    @apply card transition-shadow duration-200 hover:shadow-lg;
+  }
+  .btn-primary {
+    @apply bg-emerald-500 text-white px-4 py-2 rounded-xl text-sm font-medium
+           hover:bg-emerald-600 transition-colors duration-150 focus:outline-none
+           focus:ring-2 focus:ring-emerald-400/40 flex items-center gap-2;
+  }
+  .btn-ghost {
+    @apply text-slate-500 px-3 py-2 rounded-xl text-sm font-medium
+           hover:bg-slate-100 transition-colors duration-150 flex items-center gap-2;
+  }
+  .btn-danger {
+    @apply bg-red-50 text-red-600 px-3 py-2 rounded-xl text-sm font-medium
+           hover:bg-red-100 transition-colors duration-150 flex items-center gap-2;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green  { @apply badge bg-emerald-50 text-emerald-700; }
+  .badge-red    { @apply badge bg-red-50 text-red-700; }
+  .badge-blue   { @apply badge bg-blue-50 text-blue-700; }
+  .badge-purple { @apply badge bg-purple-50 text-purple-700; }
+  .badge-amber  { @apply badge bg-amber-50 text-amber-700; }
+  .badge-slate  { @apply badge bg-slate-100 text-slate-600; }
+  .input {
+    @apply w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2
+           text-sm text-slate-800 placeholder-slate-400 focus:outline-none
+           focus:ring-2 focus:ring-emerald-400/30 focus:border-emerald-400 transition;
+  }
+}
+
+#root {
+  @apply h-screen;
+}
